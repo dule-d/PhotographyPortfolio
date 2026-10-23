@@ -3,9 +3,10 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { animate, createTimeline } from "animejs";
+import { assetUrl } from "../lib/assets.js";
 
 const SECTIONS = ["home", "work", "about", "contact"];
-const MODEL_URL = "/models/camera.glb";
+const MODEL_URL = assetUrl("models/camera.glb");
 const MODEL_SIZE = 2.7;
 const CAMERA_Z = 7.4;
 const FOV = 38;
@@ -410,4 +411,3 @@ export function createScene(host, { theme = "dark", reducedMotion = false } = {}
     },
   };
 }
-

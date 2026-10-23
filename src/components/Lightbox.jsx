@@ -2,6 +2,7 @@
 import { animate } from "animejs";
 import { ChevronIcon, CloseIcon } from "./Icons.jsx";
 import { prefersReducedMotion } from "../lib/motion.js";
+import { assetUrl } from "../lib/assets.js";
 
 export default function Lightbox({ photos, index, onClose, onIndex }) {
   const root = useRef(null);
@@ -43,7 +44,7 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
     const prev = photos[(index - 1 + photos.length) % photos.length];
     [next, prev].forEach((p) => {
       const i = new Image();
-      i.src = `/photos/${p.id}-l.webp`;
+      i.src = assetUrl(`photos/${p.id}-l.webp`);
     });
   }, [index, photos]);
 
@@ -87,7 +88,7 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
         <img
           key={photo.id}
           ref={img}
-          src={`/photos/${photo.id}-l.webp`}
+          src={assetUrl(`photos/${photo.id}-l.webp`)}
           alt={`${photo.category} photograph by DK`}
           style={{ opacity: loaded ? undefined : 0 }}
           onLoad={() => setLoadedId(photo.id)}
@@ -101,4 +102,3 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
     </div>
   );
 }
-

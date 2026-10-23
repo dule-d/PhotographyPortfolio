@@ -11,6 +11,12 @@ npm run dev
 
 Before publishing, verify the production build with `npm run build`.
 
+## Deploy to GitHub Pages
+
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`. Push to the `main` or `master` branch (or start the workflow manually from the Actions tab) to build and deploy the site. In the repository settings, open **Pages** and set the build and deployment source to **GitHub Actions**.
+
+Vite is configured with a relative base path, so the built JavaScript, photos, favicon and 3D model work at both `username.github.io/repository/` and a custom-domain root. Deploy the generated `dist` directory through the workflow; do not publish the unbuilt source directory.
+
 ## Photos and logos
 
 Place source JPEGs in `src/assets/porfolio` (the directory name intentionally matches the existing project path), then run:

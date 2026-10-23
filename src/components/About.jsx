@@ -3,6 +3,7 @@ import { animate, onScroll, splitText, stagger } from "animejs";
 import { CameraIcon } from "./Icons.jsx";
 import { SITE } from "../data/site.js";
 import { prefersReducedMotion } from "../lib/motion.js";
+import { assetUrl } from "../lib/assets.js";
 
 const STATS = [
   { label: "Camera", value: SITE.camera },
@@ -53,7 +54,7 @@ export default function About({ portrait }) {
           </p>
           <div className="about-row">
             <figure className="about-photo" data-reveal="far">
-              <img src={`/photos/${portrait.id}-s.webp`} alt="" width={portrait.w} height={portrait.h} loading="lazy" decoding="async" />
+              <img src={assetUrl(`photos/${portrait.id}-s.webp`)} alt="" width={portrait.w} height={portrait.h} loading="lazy" decoding="async" />
             </figure>
             <ul className="gear" data-reveal>
               {STATS.map((s) => (

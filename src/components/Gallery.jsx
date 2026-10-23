@@ -1,5 +1,6 @@
 ﻿import { memo, useEffect, useRef } from "react";
 import { observeTile } from "../lib/reveal.js";
+import { assetUrl } from "../lib/assets.js";
 
 const Tile = memo(function Tile({ photo, index, onOpen }) {
   const ref = useRef(null);
@@ -14,8 +15,8 @@ const Tile = memo(function Tile({ photo, index, onOpen }) {
       style={{ aspectRatio: `${photo.w} / ${photo.h}`, "--tile": photo.color }}
     >
       <img
-        src={`/photos/${photo.id}-s.webp`}
-        srcSet={`/photos/${photo.id}-m.webp 360w, /photos/${photo.id}-s.webp 720w`}
+        src={assetUrl(`photos/${photo.id}-s.webp`)}
+        srcSet={`${assetUrl(`photos/${photo.id}-m.webp`)} 360w, ${assetUrl(`photos/${photo.id}-s.webp`)} 720w`}
         sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw"
         width={photo.w}
         height={photo.h}

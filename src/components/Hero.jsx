@@ -3,6 +3,7 @@ import { animate, createTimeline, stagger } from "animejs";
 import { ArrowDownIcon, CameraIcon } from "./Icons.jsx";
 import { SITE } from "../data/site.js";
 import { prefersReducedMotion } from "../lib/motion.js";
+import { assetUrl } from "../lib/assets.js";
 
 export default function Hero({ started, featured }) {
   const root = useRef(null);
@@ -70,7 +71,7 @@ export default function Hero({ started, featured }) {
         <div className="hero-chips" aria-hidden="true">
           {featured.map((p, i) => (
             <figure className={`hero-chip chip-${i}`} key={p.id} style={{ "--chip": p.color }}>
-              <img src={`/photos/${p.id}-m.webp`} alt="" width="360" height="450" decoding="async" loading="eager" />
+              <img src={assetUrl(`photos/${p.id}-m.webp`)} alt="" width="360" height="450" decoding="async" loading="eager" />
             </figure>
           ))}
         </div>

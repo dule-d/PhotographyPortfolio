@@ -1,6 +1,7 @@
 ﻿import { useEffect, useRef } from "react";
 import { animate, createTimeline, splitText, stagger } from "animejs";
 import { prefersReducedMotion } from "../lib/motion.js";
+import { assetUrl } from "../lib/assets.js";
 
 export default function Loader({ ready, onDone }) {
   const root = useRef(null);
@@ -73,7 +74,7 @@ export default function Loader({ ready, onDone }) {
         ))}
       </div>
       <div className="loader-inner">
-        <img className="loader-logo" src="/favicon.png" alt="" width="84" height="84" />
+        <img className="loader-logo" src={assetUrl("favicon.png")} alt="" width="84" height="84" />
         <p className="loader-label" ref={label}>
           Developing
         </p>
