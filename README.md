@@ -13,9 +13,11 @@ Before publishing, verify the production build with `npm run build`.
 
 ## Deploy to GitHub Pages
 
-The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`. Push to the `main` or `master` branch (or start the workflow manually from the Actions tab) to build and deploy the site. In the repository settings, open **Pages** and set the build and deployment source to **GitHub Actions**.
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`. Push to the `main` or `master` branch (or start the workflow manually from the Actions tab) to lint, build and deploy the site.
 
-Vite is configured with a relative base path, so the built JavaScript, photos, favicon and 3D model work at both `username.github.io/repository/` and a custom-domain root. Deploy the generated `dist` directory through the workflow; do not publish the unbuilt source directory.
+**Set the repository's Pages source to GitHub Actions:** open **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**. Do not select **Deploy from a branch**. Branch publishing serves the unbuilt React source (`/src/main.jsx`), which browsers cannot run directly; its Jekyll deployment can also overwrite the correctly built site from this workflow.
+
+Vite is configured with a relative base path, so the built JavaScript, photos, favicon and 3D model work at both `username.github.io/repository/` and a custom-domain root. The workflow deploys the generated `dist` directory.
 
 ## Photos and logos
 
