@@ -1,5 +1,5 @@
 ﻿import { InstagramIcon } from "./Icons.jsx";
-import { MODEL_CREDIT, NAV, SITE } from "../data/site.js";
+// import { MODEL_CREDIT, NAV, SITE } from "../data/site.js";
 import logoWhite from "../assets/logo-white.png";
 import logoBlack from "../assets/logo-black.png";
 import { prefersReducedMotion } from "../lib/motion.js";
