@@ -8,11 +8,8 @@
       name="description"
       content="Dusko Ilieski (DK) — photographer. Automotive, portrait, sport and street photography shot on a Canon R50 with a Tamron 17-70mm f/2.8."
     />
-    <meta property="og:title" content="DK — Photography Portfolio" />
-    <meta
-      property="og:description"
-      content="Automotive, portrait, sport and street photography by Dusko Ilieski."
-    />
+    <meta property="og:title" content="DK — Photography" />
+    <meta property="og:description" content="Automotive, portrait, sport and street photography by Dusko Ilieski." />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href="%BASE_URL%favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,16 +18,18 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Space+Grotesk:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <title>DK — Photography Portfolio</title>
+    <title>DK — Photography</title>
     <script>
       (function () {
         var d = document.documentElement;
         var t = null;
-        try { t = localStorage.getItem('theme'); } catch (e) {}
-        if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
         d.dataset.theme = t;
-        d.style.background = t === 'light' ? '#ffffeb' : '#272736';
-        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('js-motion');
+        d.style.background = t === "light" ? "#ffffeb" : "#272736";
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("js-motion");
       })();
     </script>
   </head>

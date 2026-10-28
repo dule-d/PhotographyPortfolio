@@ -13,7 +13,7 @@ export default function Navbar({ theme, onToggleTheme, active, menuOpen, setMenu
 
   useEffect(() => {
     if (!started || prefersReducedMotion()) return;
-    const a = animate(bar.current, { translateY: ["-120%", "0%"], opacity: [0, 1], duration: 1100, ease: "outExpo" });
+    const a = animate(bar.current, { opacity: [0, 1], duration: 1100, ease: "outExpo" });
     return () => a.revert();
   }, [started]);
 
@@ -38,19 +38,29 @@ export default function Navbar({ theme, onToggleTheme, active, menuOpen, setMenu
       <div className="nav-inner">
         <a className="nav-logo" href="#home" onClick={go("home")} aria-label="DK — back to top">
           <img src={theme === "dark" ? logoWhite : logoBlack} alt="" width="40" height="40" />
-          <span>DK</span>
         </a>
 
         <nav className="nav-links" aria-label="Primary">
           {NAV.map((item) => (
-            <a key={item.id} href={`#${item.id}`} onClick={go(item.id)} className={active === item.id ? "is-active" : ""}>
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={go(item.id)}
+              className={active === item.id ? "is-active" : ""}
+            >
               {item.label}
             </a>
           ))}
         </nav>
 
         <div className="nav-actions">
-          <a className="icon-btn nav-ig" href={SITE.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a
+            className="icon-btn nav-ig"
+            href={SITE.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <InstagramIcon />
           </a>
           <button
@@ -86,11 +96,16 @@ export default function Navbar({ theme, onToggleTheme, active, menuOpen, setMenu
             {item.label}
           </a>
         ))}
-        <a className="mobile-ig" href={SITE.instagram} target="_blank" rel="noopener noreferrer" style={{ "--i": NAV.length }}>
+        <a
+          className="mobile-ig"
+          href={SITE.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ "--i": NAV.length }}
+        >
           <InstagramIcon /> {SITE.handle}
         </a>
       </div>
     </header>
   );
 }
-

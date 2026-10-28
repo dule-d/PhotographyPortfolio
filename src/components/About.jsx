@@ -3,7 +3,7 @@ import { animate, onScroll, splitText, stagger } from "animejs";
 import { CameraIcon } from "./Icons.jsx";
 import { SITE } from "../data/site.js";
 import { prefersReducedMotion } from "../lib/motion.js";
-import { assetUrl } from "../lib/assets.js";
+import dkhimself from "../assets/dkhimself.jpg";
 
 const STATS = [
   { label: "Camera", value: SITE.camera },
@@ -11,7 +11,7 @@ const STATS = [
   { label: "Focus", value: "Sport · Auto · Portrait" },
 ];
 
-export default function About({ portrait }) {
+export default function About() {
   const root = useRef(null);
 
   useEffect(() => {
@@ -45,16 +45,20 @@ export default function About({ portrait }) {
       <div className="container about-grid">
         <div className="about-stage" aria-hidden="true" />
         <div className="about-copy">
-          <p className="eyebrow" data-reveal>About</p>
+          <p className="eyebrow" data-reveal>
+            About
+          </p>
           <h2 className="about-statement">
-            I shoot what moves me: fast games, loud engines and quiet faces, always looking for the light that tells the story.
+            I shoot what moves me: fast games, loud engines and quiet faces, always looking for the light that tells the
+            story.
           </h2>
           <p className="about-text" data-reveal>
-            Photography is how I slow time down. Whether it's a keeper diving in the last minute, a car under exhibition lights or a stranger on a city street, I'm chasing honest, colourful frames.
+            Photography is how I slow time down. Whether it's a keeper diving in the last minute, a car under exhibition
+            lights or a stranger on a city street, I'm chasing honest, colourful frames.
           </p>
           <div className="about-row">
             <figure className="about-photo" data-reveal="far">
-              <img src={assetUrl(`photos/${portrait.id}-s.webp`)} alt="" width={portrait.w} height={portrait.h} loading="lazy" decoding="async" />
+              <img src={dkhimself} alt="Dusko Ilieski" loading="lazy" decoding="async" />
             </figure>
             <ul className="gear" data-reveal>
               {STATS.map((s) => (

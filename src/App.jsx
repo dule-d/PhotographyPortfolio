@@ -13,7 +13,6 @@ import { revealOnScroll } from "./lib/reveal.js";
 import { prefersReducedMotion } from "./lib/motion.js";
 
 const FEATURED = ["pobeda-fkpobeda-post-2", "car-exh-carexhib-4", "solun-solun-8722"].map((id) => data.photos.find((p) => p.id === id)).filter(Boolean);
-const PORTRAIT = data.photos.find((p) => p.id === "eksportirani-viktor-viktorce-10") ?? data.photos[0];
 const PAGE = 16;
 const SECTION_IDS = ["home", "work", "about", "contact"];
 
@@ -135,7 +134,7 @@ export default function App() {
           onMore={() => setVisible((v) => v + PAGE)}
           onOpen={setLightbox}
         />
-        <About portrait={PORTRAIT} />
+        <About />
         <Contact />
       </main>
       <Footer theme={theme} />

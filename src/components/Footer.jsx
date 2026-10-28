@@ -26,9 +26,13 @@ export default function Footer({ theme }) {
 
         <nav className="footer-links" aria-label="Footer">
           <h3>Explore</h3>
-          <a href="#home" onClick={go("home")}>Home</a>
+          <a href="#home" onClick={go("home")}>
+            Home
+          </a>
           {NAV.map((n) => (
-            <a key={n.id} href={`#${n.id}`} onClick={go(n.id)}>{n.label}</a>
+            <a key={n.id} href={`#${n.id}`} onClick={go(n.id)}>
+              {n.label}
+            </a>
           ))}
         </nav>
 
@@ -41,11 +45,8 @@ export default function Footer({ theme }) {
       </div>
 
       <div className="container footer-bottom">
-        <span>© {year} {SITE.name}. All rights reserved.</span>
-        <span className="credit">
-          3D model "{MODEL_CREDIT.title}" by{" "}
-          <a href={MODEL_CREDIT.authorUrl} target="_blank" rel="noopener noreferrer">{MODEL_CREDIT.author}</a>, licensed{" "}
-          <a href={MODEL_CREDIT.licenseUrl} target="_blank" rel="noopener noreferrer">{MODEL_CREDIT.license}</a>.
+        <span>
+          © {year} {SITE.name}. All rights reserved.
         </span>
       </div>
     </footer>

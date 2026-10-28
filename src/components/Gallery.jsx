@@ -41,7 +41,7 @@ export default function Gallery({ photos, categories, filter, setFilter, visible
         </header>
 
         <div className="filters" role="tablist" aria-label="Filter photos" data-reveal>
-          {["All", ...categories].map((c) => (
+          {["All", ...categories.filter((category) => category !== "Portrait")].map((c) => (
             <button
               key={c}
               type="button"
