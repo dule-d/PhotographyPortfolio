@@ -1,5 +1,5 @@
 ﻿import { InstagramIcon } from "./Icons.jsx";
-// import { MODEL_CREDIT, NAV, SITE } from "../data/site.js";
+import { NAV, SITE } from "../data/site.js";
 import logoWhite from "../assets/logo-white.png";
 import logoBlack from "../assets/logo-black.png";
 import { prefersReducedMotion } from "../lib/motion.js";
@@ -40,6 +40,12 @@ export default function Footer({ theme }) {
           <h3>Follow</h3>
           <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="footer-ig">
             <InstagramIcon /> {SITE.handle}
+          </a>
+        </div>
+        <div className="footer-links">
+          <h3>Call me</h3>
+          <a href={`tel:${SITE.phone}`} className="footer-phone">
+            {SITE.phone}
           </a>
         </div>
       </div>
