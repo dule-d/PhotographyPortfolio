@@ -900,6 +900,7 @@ main {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   outline: none;
+  overflow: hidden;
   touch-action: pan-y;
 }
 
@@ -922,6 +923,10 @@ main {
   border-radius: 12px;
   box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .lb-figure figcaption {
