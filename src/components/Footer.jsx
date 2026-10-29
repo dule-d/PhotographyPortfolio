@@ -41,10 +41,7 @@ export default function Footer({ theme }) {
           <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="footer-ig">
             <InstagramIcon /> {SITE.handle}
           </a>
-        </div>
-        <div className="footer-links">
-          <h3>Call me</h3>
-          <a href={`tel:${SITE.phone}`} className="footer-phone">
+          <a href={`tel:${SITE.phone}`} className="footer-ig">
             {SITE.phone}
           </a>
         </div>

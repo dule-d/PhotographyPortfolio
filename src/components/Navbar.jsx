@@ -71,8 +71,8 @@ export default function Navbar({ theme, onToggleTheme, active, menuOpen, setMenu
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
             onClick={onToggleTheme}
           >
-            <SunIcon className="ts-sun" />
             <MoonIcon className="ts-moon" />
+            <SunIcon className="ts-sun" />
             <span className="ts-thumb" ref={thumb} />
           </button>
           <button

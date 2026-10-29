@@ -5,6 +5,7 @@
   handle: "@dusko.ilieski",
   camera: "Canon R50",
   lens: "Tamron 17-70mm f/2.8",
+  phone: "+389 75 431 484",
 };
 
 export const NAV = [

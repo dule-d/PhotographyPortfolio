@@ -401,11 +401,11 @@ main {
   height: 26px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--pink), var(--orange));
-  transition: transform 0.45s var(--ease);
+  transition: translate 0.45s var(--ease);
 }
 
 :root[data-theme="light"] .ts-thumb {
-  transform: translateX(28px);
+  translate: 28px 0;
 }
 
 :root[data-theme="dark"] .ts-moon,
